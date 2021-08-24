@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title %} To Do's List {% endblock %}
+
+{% block content %}
+
+{% for to_do in to_dos %}
+<div class="card_style">
+    <ul class="list_header">{{to_do.title}}
+        <li class="list_item">Description: {{to_do.description}}</li>
+        <li class="list_item">State: {{to_do.state}}</li>
+        <li class="list_item">Date: {{to_do.date}}</li>
+    </ul>
+    <a href="{% url 'update' to_do.id %}" class="links">Update</a>
+    <a href="{% url 'delete' to_do.id %}" class="links">Delete</a>
+    <br>
+    <br>
+</div>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block title %} To Do's {% endblock %}
+
+{% block content %}
+
+<form action="" method="POST"> {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Create" class="form">
+</form>
+
+<br>
+<br>
+<a href="{% url 'list' %} " class="links">See Full List</a>
+
+{% endblock %}
